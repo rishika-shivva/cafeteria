@@ -1,0 +1,23 @@
+<section class="MenuitemSection">
+  <div class="MenuitemSectionTitle">
+    <p class="MenuitemSectionTitle-text"> <%= section_title %> </p>
+  </div>
+  <ul>
+    <% Menuitems.each do |Menuitem| %>
+      <li class="MenuitemItem">
+        <label class="MenuitemItem-container">
+          <%= form_with(url: "/Menuitems/#{Menuitem.id}", method: "put") do %>
+            <%= Menuitem.name %>
+            <%= Menuitem.description %>
+            <%= Menuitem.price %>
+          <% end %>
+          <a class="MenuitemItem-delete" href="javascript:void(0)">
+            <%= form_with(url: "/Menuitems/#{Menuitem.id}", method: "delete") do %>
+              <%= image_submit_tag("trashcan.png") %>
+            <% end %>
+          </a>
+        </label>
+      </li>
+    <% end %>
+  </ul>
+</section>

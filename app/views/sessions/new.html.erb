@@ -1,0 +1,13 @@
+<p class="NewMenus-title"> Update! </p>
+
+<section class="MenusNew">
+  <%= form_with url: sessions_path do |form| %>
+    <div class="Form-section">
+      <p class="FormInput-label"> Name: </p>
+      <%= form.text_field :name, class: "Form-Input", autofocus:"autofocus" %>
+    </div>
+    <div class="Form-section">
+      <%= form.submit "Update!", class: "Form-submit" %>
+    </div>
+  <% end %>
+</section>

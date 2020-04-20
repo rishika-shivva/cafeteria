@@ -10,6 +10,21 @@
   </head>
 
   <body>
+  <% if @current_menu %>
+      <p class="MenuHeader">
+        Welcome to <%= @current_menu.name %> Menu!
+        <%= link_to "Exit", destroy_session_path, method: "delete" %>
+      </p>
+    <% end %>
+
+    <% if flash[:error] %>
+      <p class="Flash-error"> <%= flash[:error] %> </p>
+    <% end %>
+
+    <% if flash[:notice] %>
+      <p class="Flash-notice"> <%= flash[:notice] %> </p>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

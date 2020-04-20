@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get "/" => "home#index"
 
-  get "menus", to: "menus#index"
-  get "menus/create", to: "menus#create"
-  get "menus/:id", to: "menus#show"
+  resources :menuitems
+
+  resources :menus
+
+  get "/update" => "sessions#new", as: :new_sessions
+  post "/create" => "sessions#create", as: :sessions
+  delete "/exit" => "sessions#destroy", as: :destroy_session
 end

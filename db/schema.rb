@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_19_181022) do
+ActiveRecord::Schema.define(version: 2020_04_20_080917) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "menuitems", force: :cascade do |t|
-    t.integer "menu_id"
     t.string "name"
     t.text "description"
     t.integer "price"
+    t.bigint "menu_id"
   end
 
   create_table "menus", force: :cascade do |t|

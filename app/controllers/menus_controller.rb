@@ -1,6 +1,22 @@
 class MenusController < ApplicationController
+  skip_before_action :ensure_menu_opened
+
+  def index
+    render "menus/new"
+  end
+
+  def new
+    render "menus/new"
+  end
+
   def create
     new_menu = Menu.new(name: params[:name])
-    new_menu.save
+    if new_menu.save
+      redirect_to new_sessions_path
+      flash[:notice] = "Please Enter Menu name to be displayed"
+    else
+      flash[:error] = new_menu.errors.full_messages.join(", ")
+      redirect_to menus_path
+    end
   end
 end

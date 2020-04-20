@@ -20,6 +20,12 @@ class MenuitemsController < ApplicationController
       price: price,
       menu_id: current_menu.id,
     )
+    if new_menuitem.save
+      redirect_to menuitems_path
+    else
+      flash[:error] = new_menuitem.errors.full_messages.join(", ")
+      redirect_to menuitems_path
+    end
   end
 
   def update
@@ -29,11 +35,13 @@ class MenuitemsController < ApplicationController
     menuitem.description = description
     menuitem.price = price
     menuitem.save!
+    redirect_to menuitems_path
   end
 
   def destroy
     id = params[:id]
     menuitem = current_menu.menuitems.find(id)
     menuitem.destroy
+    redirect_to menuitems_path
   end
 end

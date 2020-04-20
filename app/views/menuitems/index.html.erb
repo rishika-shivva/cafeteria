@@ -1,0 +1,21 @@
+<main class="MenuitemPageMain">
+    <article>
+      <h1 class="MenuitemPage-title"> Menuitems-list </h1>
+      <%= form_with(url: "/Menuitems", method: "POST", class: "AddMenuitem") do%>
+        <%= text_field_tag 'Menuitem_name', nil,
+                            autofocus:"autofocus",
+                            placeholder: "Name",
+                            class: "AddMenuitem-text"
+        %>
+        <%= text_field_tag 'Menuitem_description', nil,
+                            placeholder: "Description",
+                            class: "AddMenuitem-text"
+        %>
+        <%= text_field_tag 'Menuitem_price', nil,
+                            placeholder: "Price",
+                            class: "AddMenuitem-text"
+        %>
+        <%= submit_tag 'Add', class: "AddMenuitem-button" %>
+      <% end %>
+    </article>
+  </main>
