@@ -15,6 +15,7 @@ class MenuitemsController < ApplicationController
       name: params[:name],
       description: params[:description],
       price: params[:price],
+      diet_type: params[:diet_type],
       menu_id: current_menu.id,
     )
     if new_menuitem.save

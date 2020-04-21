@@ -1,7 +1,7 @@
 class Menuitem < ActiveRecord::Base
   validates :name, presence: true
   validates :price, presence: true
-
+  validates :diet_type, presence: true
   belongs_to :menu
 
   def self.of_menu(menu)
@@ -9,10 +9,10 @@ class Menuitem < ActiveRecord::Base
   end
 
   def self.vegetarian
-    all.where("type < ?", "veg")
+    all.where("diet_type = ?", "veg")
   end
 
   def self.nonvegetarian
-    all.where("type < ?", "nonveg")
+    all.where("diet_type = ?", "nonveg")
   end
 end

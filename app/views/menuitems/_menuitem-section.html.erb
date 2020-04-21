@@ -6,13 +6,12 @@
     <% menuitems.each do |menuitem| %>
       <li class="MenuitemItem">
         <label class="MenuitemItem-container">
-          <%= form_with(url: "/menuitems/#{menuitem.id}", method: "put") do %>
+        <%= form_with(url: "/menuitems/#{menuitem.id}", method: "put") do %>
           <% end %>
-
           <p class="MenuitemItem-text">
             <%= menuitem.name %>
             <%= menuitem.description %>
-            <%= menuitem.price %>
+            Rs <%= menuitem.price %>
           </p>
 
           <a class="MenuitemItem-delete" href="javascript:void(0)">
