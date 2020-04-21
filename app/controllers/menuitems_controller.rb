@@ -11,13 +11,10 @@ class MenuitemsController < ApplicationController
   end
 
   def create
-    name = params[:name]
-    description = params[:description]
-    price = params[:price]
-    new_menuitem = menuitems.new(
-      name: name,
-      description: description,
-      price: price,
+    new_menuitem = Menuitem.new(
+      name: params[:name],
+      description: params[:description],
+      price: params[:price],
       menu_id: current_menu.id,
     )
     if new_menuitem.save
