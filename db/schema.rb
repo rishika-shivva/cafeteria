@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 2020_04_22_100104) do
     t.string "name"
   end
 
+<<<<<<< HEAD
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "role"
@@ -34,4 +35,6 @@ ActiveRecord::Schema.define(version: 2020_04_22_100104) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
+=======
+>>>>>>> 1216e1303a6d7e8fca59e6fc48967aabe5449c9f
 end
