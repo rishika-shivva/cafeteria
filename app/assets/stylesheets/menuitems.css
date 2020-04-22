@@ -7,7 +7,9 @@ body {
 
 .MenuitemPage-title {
   font-size: 20px;
-  color: #453C52;
+  margin-left: 500px;
+  width: 400px;
+  color: #453c52;
   letter-spacing: 0.14px;
   line-height: 1.6;
   font-weight: 600;
@@ -15,6 +17,7 @@ body {
 }
 
 .AddMenuitem {
+  padding-left: 150px;
   display: flex;
   height: 32px;
   align-items: stretch;
@@ -22,39 +25,41 @@ body {
 }
 
 .MenuitemSection {
+  padding-left: 500px;
+  width: 500px;
   margin-bottom: 20px;
 }
 
 .AddMenuitem-text {
   padding: 6px 12px;
   font-size: 14px;
-  color: #453C52;
+  color: #453c52;
   margin-right: 10px;
   border-radius: 4px;
-  border: 1px solid #BFB8CC;
+  border: 1px solid #bfb8cc;
 }
 
 .AddMenuitem-date {
   padding: 6px;
   font-size: 14px;
-  color: #453C52;
+  color: #453c52;
   margin-right: 10px;
   border-radius: 4px;
-  border: 1px solid #BFB8CC;
+  border: 1px solid #bfb8cc;
 }
 
 .AddMenuitem-button {
   padding: 6px 24px;
   font-size: 14px;
   color: white;
-  background-color: #48BB78;
+  background-color: #48bb78;
   border-radius: 4px;
   border: 1px solid transparent;
 }
 
 .MenuitemSectionTitle {
   display: flex;
-  color: #453C52;
+  color: #453c52;
   align-items: center;
   margin-bottom: 8px;
 }
@@ -74,7 +79,7 @@ body {
   font-size: 14px;
   margin-left: 8px;
   margin-bottom: 6px;
-  color: #453C52;
+  color: #453c52;
 }
 
 .MenuitemItem-text {
@@ -90,7 +95,7 @@ body {
 }
 
 .MenuitemItem-container:hover {
-  background-color: #F1EDF7;
+  background-color: #f1edf7;
 }
 
 .MenuitemItem-checkbox {
@@ -113,13 +118,13 @@ body {
   visibility: visible;
 }
 
-.MenuitemItem-delete>img {
+.MenuitemItem-delete > img {
   width: 16px;
 }
 
 .MenuitemItem-date {
   font-size: 12px;
-  color: #726A7E;
+  color: #726a7e;
   letter-spacing: 0.09px;
   margin-left: 10px;
   display: inline;
