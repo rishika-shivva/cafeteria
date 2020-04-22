@@ -1,9 +1,9 @@
 class HomeController < ApplicationController
-  skip_before_action :ensure_menu_opened
+  skip_before_action :ensure_user_logged_in
 
   def index
-    if current_menu
-      redirect_to menuitems_path
+    if current_user
+      redirect_to users_path
     else
       render "index"
     end

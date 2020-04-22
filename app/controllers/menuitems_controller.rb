@@ -1,4 +1,4 @@
-class MenuitemsController < ApplicationController
+class MenuitemsController < MenuApplicationController
   def index
     @menuitems = current_menu.menuitems
     render "index"
@@ -29,10 +29,7 @@ class MenuitemsController < ApplicationController
   def update
     id = params[:id]
     menuitem = current_menu.menuitems.find(id)
-    menuitem.name = name
-    menuitem.description = description
-    menuitem.price = price
-    menuitem.save!
+    menuitem.update
     redirect_to menuitems_path
   end
 

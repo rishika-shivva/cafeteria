@@ -1,13 +1,21 @@
-<p class="NewMenus-title"> Update! </p>
+<p class="NewUsers-title"> Sign in! </p>
 
-<section class="MenusNew">
+<section class="UsersNew">
   <%= form_with url: sessions_path do |form| %>
     <div class="Form-section">
       <p class="FormInput-label"> Name: </p>
       <%= form.text_field :name, class: "Form-Input", autofocus:"autofocus" %>
     </div>
     <div class="Form-section">
-      <%= form.submit "Update!", class: "Form-submit" %>
+      <p class="FormInput-label"> Role: </p>
+      <%= form.text_field :role, class: "Form-Input", autofocus:"autofocus" %>
+    </div>
+    <div class="Form-section">
+      <p class="FormInput-label"> Password: </p>
+      <%= form.password_field :password, class: "Form-Input" %>
+    </div>
+    <div class="Form-section">
+      <%= form.submit "Sign-in!", class: "Form-submit" %>
     </div>
   <% end %>
 </section>

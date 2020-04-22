@@ -1,23 +1,23 @@
 class SessionsController < ApplicationController
-  skip_before_action :ensure_menu_opened
+  skip_before_action :ensure_user_logged_in
 
   def new
   end
 
   def create
-    menu = Menu.find_by(name: params[:name])
-    if menu
-      session[:current_menu_id] = menu.id
-      redirect_to "/"
+    user = User.find_by(name: params[:name])
+    if user && user.authenticate(params[:password])
+      session[:current_user_id] = user.id
+      redirect_to "/menu"
     else
-      flash[:error] = "Specified Menu not found.Please retry."
+      flash[:error] = "Your login attempt was invalid.Please retry."
       redirect_to new_sessions_path
     end
   end
 
   def destroy
-    session[:current_menu_id] = nil
-    @current_menu = nil
-    redirect_to "/"
+    session[:current_user_id] = nil
+    @current_user = nil
+    redirect_to "/menu"
   end
 end
