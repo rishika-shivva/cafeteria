@@ -1,4 +1,4 @@
-class MenusController < MenuApplicationController
+class MenusController < MenuapplicationController
   skip_before_action :ensure_menu_opened
 
   def index

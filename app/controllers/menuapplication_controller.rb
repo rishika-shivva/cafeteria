@@ -1,4 +1,4 @@
-class MenuApplicationController < ActionController::Base
+class MenuapplicationController < ActionController::Base
   before_action :ensure_menu_opened
 
   def ensure_menu_opened

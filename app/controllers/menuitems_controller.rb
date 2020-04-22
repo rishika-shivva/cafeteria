@@ -1,4 +1,4 @@
-class MenuitemsController < MenuApplicationController
+class MenuitemsController < MenuapplicationController
   def index
     @menuitems = current_menu.menuitems
     render "index"

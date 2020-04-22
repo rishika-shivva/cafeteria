@@ -1,4 +1,4 @@
-class MenusessionsController < MenuApplicationController
+class MenusessionsController < MenuapplicationController
   skip_before_action :ensure_menu_opened
 
   def new
