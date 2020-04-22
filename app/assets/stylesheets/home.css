@@ -1,4 +1,8 @@
 .Home-Title {
+  font-family: sans-serif;
+  width: 400px;
+  margin-top: 60px;
+  padding-left: 400px;
   font-size: 20px;
   margin-bottom: 30px;
 }
@@ -6,25 +10,35 @@
 .Home-authenticate {
   font-size: 16px;
   margin-bottom: 20px;
+  padding-left: 400px;
+  width: 500px;
 }
 
 .MenuHeader {
-  padding: 10px;
+  margin-left: 400px;
+  width: 500px;
+  margin-top: 30px;
   background-color: lightgray;
-  font-size: 14px;
+  font-size: 20px;
   margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
 }
 
 .Flash-error {
-  font-size: 16px;
+  padding-left: 500px;
+  width: 500px;
+  margin-top: 30px;
+  font-size: 20px;
   color: darkred;
   margin-bottom: 20px;
 }
 
 .Flash-notice {
-  font-size: 16px;
+  margin-top: 30px;
+  padding-left: 500px;
+  width: 500px;
+  font-size: 20px;
   color: darkblue;
   margin-bottom: 30px;
 }
