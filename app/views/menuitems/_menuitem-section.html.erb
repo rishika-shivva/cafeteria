@@ -3,24 +3,39 @@
     <p class="MenuitemSectionTitle-text"> <%= section_title %> </p>
   </div>
   <ul>
-    <% menuitems.each do |menuitem| %>
-      <li class="MenuitemItem">
-        <label class="MenuitemItem-container">
-        <%= form_with(url: "/menuitems/#{menuitem.id}", method: "put") do %>
-          <% end %>
-          <p class="MenuitemItem-text">
-            <%= menuitem.name %>:
-            <%= menuitem.description %>
-            ₹ <%= menuitem.price %>
-          </p>
-
-          <a class="MenuitemItem-delete" href="javascript:void(0)">
-            <%= form_with(url: "/menuitems/#{menuitem.id}", method: "delete") do %>
-              <%= image_submit_tag("trashcan.png") %>
-            <% end %>
-          </a>
-        </label>
-      </li>
-    <% end %>
+    <table>
+      <thead>
+        <tr>
+          <th>MenuItem ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% menuitems.each do |menuitem| %>
+        <tr>
+          <td><%= menuitem.id %></td>
+          <td><%= menuitem.name %></td>
+          <td><%= menuitem.description %></td>
+          <td><%= menuitem.price %></td>
+          <td>
+            <li class="MenuitemItem">
+              <label class="MenuitemItem-container">
+                <%= form_with(url: "/menuitems/#{menuitem.id}", method: "put") do %>
+                <% end %>
+                <a class="MenuitemItem-delete" href="javascript:void(0)">
+                  <%= form_with(url: "/menuitems/#{menuitem.id}", method: "delete") do %>
+                    <%= image_submit_tag("trashcan.png") %>
+                  <% end %>
+                </a>
+              </label>
+            </li>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
   </ul>
 </section>
