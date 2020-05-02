@@ -3,7 +3,7 @@ class MenusController < MenuapplicationController
 
   def index
     @menus = Menu.all
-    render "menus/new"
+    render "menus/index"
   end
 
   def new
