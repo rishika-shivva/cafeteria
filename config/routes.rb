@@ -8,10 +8,11 @@ Rails.application.routes.draw do
 
   resources :users
 
-  get "/signin" => "sessions#new", as: :new_sessions
+  get "/signup" => "sessions#new", as: :new_sessions
   post "/signin" => "sessions#create", as: :sessions
   delete "/signout" => "sessions#destroy", as: :destroy_session
   get "/update" => "menusessions#new", as: :new_menusessions
   post "/create" => "menusessions#create", as: :menusessions
   delete "/exit" => "menusessions#destroy", as: :destroy_menusession
+  patch "menuitems/:id", to: "menuitems#update"
 end

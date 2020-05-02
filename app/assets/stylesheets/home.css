@@ -7,6 +7,26 @@
   margin-bottom: 30px;
 }
 
+.Home-Subtitle {
+  font-family: sans-serif;
+  width: 400px;
+  margin-top: 60px;
+  padding-left: 400px;
+  margin-left: 400px;
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: crimson;
+}
+
+.Home-Menulist {
+  font-family: sans-serif;
+  width: 400px;
+  padding-top: 10px;
+  padding-left: 400px;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
 .Home-authenticate {
   font-size: 16px;
   margin-bottom: 20px;

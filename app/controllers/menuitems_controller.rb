@@ -7,7 +7,7 @@ class MenuitemsController < MenuapplicationController
   def show
     id = params[:id]
     menuitem = current_menu.menuitems.find(id)
-    render "menuitem"
+    redirect_to menuitems_path
   end
 
   def create
@@ -26,11 +26,19 @@ class MenuitemsController < MenuapplicationController
     end
   end
 
+  def edit
+    @menuitem = Menuitem.find(params[:id])
+  end
+
   def update
-    id = params[:id]
-    menuitem = current_menu.menuitems.find(id)
-    menuitem.update
-    redirect_to menuitems_path
+    @menuitem = Menuitem.find(params[:id])
+    @menuitem.update(
+      name: params[:menuitem][:name],
+      description: params[:menuitem][:description],
+      price: params[:menuitem][:price],
+      diet_type: params[:menuitem][:diet_type],
+    )
+    redirect_to menuitem_path(@menuitem)
   end
 
   def destroy

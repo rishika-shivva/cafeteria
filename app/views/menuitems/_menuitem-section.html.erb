@@ -20,18 +20,13 @@
           <td><%= menuitem.name %></td>
           <td><%= menuitem.description %></td>
           <td><%= menuitem.price %></td>
+          <td><%= link_to "Edit", edit_menuitem_path(menuitem) %></td>
           <td>
-            <li class="MenuitemItem">
-              <label class="MenuitemItem-container">
-                <%= form_with(url: "/menuitems/#{menuitem.id}", method: "put") do %>
-                <% end %>
-                <a class="MenuitemItem-delete" href="javascript:void(0)">
-                  <%= form_with(url: "/menuitems/#{menuitem.id}", method: "delete") do %>
-                    <%= image_submit_tag("trashcan.png") %>
-                  <% end %>
-                </a>
-              </label>
-            </li>
+            <a href="javascript:void(0)">
+              <%= form_with(url: "/menuitems/#{menuitem.id}", method: "delete") do %>
+                <%= image_submit_tag("trashcan.png") %>
+              <% end %>
+            </a>
           </td>
         </tr>
         <% end %>

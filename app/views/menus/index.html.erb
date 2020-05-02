@@ -21,18 +21,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-<p class="Home-Title">
-<h3> New Menu! </h3>
-<%= form_with(url: "/menus", method: "POST", class: "AddMenuitem") do%>
-  <%= text_field_tag 'name', nil,
-               autofocus:"autofocus",
-               placeholder: "Name",
-               class: "AddMenuitem-text"
-  %>
-  <%= submit_tag 'Create', class: "AddMenuitem-button" %>
-<% end %>
-<br>
-<%= link_to "Update Existing Menu!", new_menusessions_path %>
-</p>

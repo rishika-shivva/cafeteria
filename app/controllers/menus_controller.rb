@@ -3,7 +3,7 @@ class MenusController < MenuapplicationController
 
   def index
     @menus = Menu.all
-    render "menus/new"
+    render "menus/index"
   end
 
   def new
@@ -13,17 +13,10 @@ class MenusController < MenuapplicationController
   def create
     new_menu = Menu.new(name: params[:name])
     if new_menu.save
-      redirect_to new_menusessions_path
+      redirect_to menuitems_path
     else
       flash[:error] = new_menu.errors.full_messages.join(", ")
       redirect_to menus_path
     end
-  end
-
-  def destroy
-    id = params[:id]
-    menu = current_user.menus.find(id)
-    menu.destroy
-    redirect_to menus_path
   end
 end
