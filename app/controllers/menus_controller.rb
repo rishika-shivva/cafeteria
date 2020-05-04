@@ -19,4 +19,14 @@ class MenusController < MenuapplicationController
       redirect_to menus_path
     end
   end
+
+  def show
+    @menu = Menu.find(params[:id])
+    @menuitems = @menu.menuitems
+  end
+
+  def edit
+    @menu = Menu.find(params[:id])
+    @menuitems = @menu.menuitems
+  end
 end

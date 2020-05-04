@@ -17,6 +17,7 @@
       <tr>
         <td class="Home-Menulist"><%= menu.id %></td>
         <td class="Home-Menulist"><%= menu.name %></td>
+        <td><%= link_to "Edit", edit_menu_path(menu) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,6 +34,4 @@
   %>
   <%= submit_tag 'Create', class: "AddMenuitem-button" %>
 <% end %>
-<br>
-<%= link_to "Update Existing Menu!", new_menusessions_path %>
 </p>

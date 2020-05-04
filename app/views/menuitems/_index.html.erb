@@ -22,11 +22,11 @@
         <%= submit_tag 'Add', class: "AddMenuitem-button" %>
       <% end %>
 
-      <%= render partial: "menuitem-section", locals: {
+      <%= render partial: "menuitems/menuitem-section", locals: {
         section_title: "Vegetarian",
         menuitems: @menuitems.vegetarian,
         } %>
-      <%= render partial: "menuitem-section", locals: {
+      <%= render partial: "menuitems/menuitem-section", locals: {
         section_title: "Non-Vegetarian",
         menuitems: @menuitems.nonvegetarian,
         } %>

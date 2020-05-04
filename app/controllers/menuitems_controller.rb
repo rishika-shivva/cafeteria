@@ -4,12 +4,6 @@ class MenuitemsController < MenuapplicationController
     render "index"
   end
 
-  def show
-    id = params[:id]
-    menuitem = current_menu.menuitems.find(id)
-    redirect_to menuitems_path
-  end
-
   def create
     new_menuitem = Menuitem.new(
       name: params[:name],

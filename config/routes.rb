@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   post "/create" => "menusessions#create", as: :menusessions
   delete "/exit" => "menusessions#destroy", as: :destroy_menusession
   patch "menuitems/:id", to: "menuitems#update"
+  get "menus/:id/show", to: "menus#show", as: :show_menu
 end

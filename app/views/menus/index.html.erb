@@ -17,6 +17,7 @@
       <tr>
         <td class="Home-Menulist"><%= menu.id %></td>
         <td class="Home-Menulist"><%= menu.name %></td>
+        <td><%= link_to "Show", show_menu_path(menu) %></td>
       </tr>
     <% end %>
   </tbody>
