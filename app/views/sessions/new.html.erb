@@ -8,7 +8,7 @@
     </div>
     <div class="Form-section">
       <p class="FormInput-label"> Role: </p>
-      <%= form.select :role, options_for_select([ 'Owner', 'User', 'Clerk' ], "User") %>
+      <%= form.text_field :role, class: "Form-Input" %>
     </div>
     <div class="Form-section">
       <p class="FormInput-label"> Password: </p>

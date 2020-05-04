@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:name])
     if user && user.authenticate(params[:password])
       session[:current_user_id] = user.id
-      if user.role == "Owner"
+      if user.role == "owner"
         redirect_to "/menu"
       else
         redirect_to "/menus"
