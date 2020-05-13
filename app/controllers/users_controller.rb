@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
   skip_before_action :ensure_user_logged_in
 
-  def index
-    render "users/new"
+  def new
   end
 
-  def new
-    render "users/new"
+  def index
+    ensure_owner_logged_in
   end
 
   def create
@@ -16,11 +15,12 @@ class UsersController < ApplicationController
       password: params[:password],
     )
     if new_user.save
-      redirect_to new_sessions_path
-      flash[:notice] = "Please Sign in to continue."
+      flash[:success] = "Signed up successfully"
+      session[:current_user_id] = new_user.id
+      redirect_to "/"
     else
       flash[:error] = new_user.errors.full_messages.join(", ")
-      redirect_to users_path
+      redirect_to new_user_path
     end
   end
 end

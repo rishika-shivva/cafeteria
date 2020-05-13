@@ -1,19 +1,16 @@
 Rails.application.routes.draw do
-  get "/" => "home#index"
-  get "/menu" => "menuhome#index"
-
-  resources :menuitems
-
+  get "/", to: "home#index"
+  patch "/orders/pay", to: "orders#pay"
+  post "/orders/addmore", to: "orders#addmore"
+  get "/orders/cart", to: "orders#cart", as: :cart
+  get "/menus/edit", to: "menus#edit", as: :menus_edit
   resources :menus
-
   resources :users
-
-  get "/signup" => "sessions#new", as: :new_sessions
-  post "/signin" => "sessions#create", as: :sessions
-  delete "/signout" => "sessions#destroy", as: :destroy_session
-  get "/update" => "menusessions#new", as: :new_menusessions
-  post "/create" => "menusessions#create", as: :menusessions
-  delete "/exit" => "menusessions#destroy", as: :destroy_menusession
-  patch "menuitems/:id", to: "menuitems#update"
-  get "menus/:id/show", to: "menus#show", as: :show_menu
+  resources :menuitems
+  resources :orders
+  resources :orderitems
+  post "/menus/setmenu", to: "menus#set", as: :setmenu
+  get "/signin", to: "sessions#new", as: :new_sessions
+  post "/signin", to: "sessions#create", as: :sessions
+  delete "/signout", to: "sessions#destroy", as: :destroy_session
 end

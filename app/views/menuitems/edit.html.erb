@@ -1,7 +1,25 @@
-<%= form_for @menuitem do |f| %>
-  <%= f.text_field :name %><br>
-  <%= f.text_field :description %><br>
-  <%= f.text_field :price %><br>
-  <%= f.text_field :diet_type %><br>
-  <%= f.submit "Submit" %>
-<% end %>
+<body class="UsersBody">
+  <div class='edit-menuitem-container'>
+    <%= form_with(url: "/menuitems/#{menuitem.id}", method: "patch", ) do %>
+      <h1 class="Editingtitle"> Editing Menu Item: <%= menuitem.name %> <h1>
+      <%= text_field_tag(name = 'name', value = nil,
+                         class: "EditMenuitem-name",
+                         placeholder: menuitem.name )
+      %>
+      <%= text_field_tag(name = 'description', value = nil,
+                         class: "EditMenuitem-description",
+                         placeholder:  menuitem.description.presence||'Add description' )
+      %>
+      <%= text_field_tag(name = 'price', value = nil,
+                         class: "EditMenuitem-price",
+                         placeholder:  menuitem.price )
+      %>
+      <%= text_field_tag(name = 'diet_type',
+                         value = nil,
+                         class: "EditMenuitem-diet_type",
+                         placeholder:  menuitem.diet_type.presence||'Veg/Non-veg' )
+      %>
+      <%= button_tag(value='Update', class: "Add-Button")  %>
+    <% end %>
+  </div>
+</body>

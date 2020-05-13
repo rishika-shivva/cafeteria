@@ -1,0 +1,61 @@
+<section class="MenuItemList">
+<ul>
+  <table class="MenuTable">
+    <thead class="MenuTablehead">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Veg/Non-Veg</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+    <tbody class="MenuTablebody">
+      <% menu.menuitems.all.each do |menuitem| %>
+        <tr>
+          <td><%= menuitem.name %></td>
+          <td><%= menuitem.description %></td>
+          <td>₹ <%= menuitem.price %></td>
+          <td> <%= menuitem.diet_type%></td>
+          <% if rendered_from == 'home' %>
+            <div>
+              <% qty = @current_user.orders.cart_order.orderitems.qty(menuitem.id)%>
+              <% if qty==0 %>
+                <%= link_to "Add", orderitems_path(menuitem_id: menuitem.id,
+                                                menu_item_name: menuitem.name,
+                                                menu_item_price: menuitem.price,
+                                                from: "menuitems"),
+                                                method: "post",
+                                                class: "Add-text"
+                 %>
+              <% else %>
+                <div class='MenuItem-qty'>
+                  <% order_item = @current_user.orders.cart_order.orderitems.item(menuitem.id)%>
+                  <%= link_to "− ", orderitem_path(id:order_item.id,from: "menuitems",), method: "delete", class: "home-minus" %>
+                  <%= " #{qty}" %>
+                  <%= link_to "＋", orderitems_path(menuitem_id: menuitem.id,
+                                                    menu_item_name: menuitem.name,
+                                                    menu_item_price: menuitem.price,
+                                                    from: "menuitems"),
+                                                    method: "post",
+                                                    class: "home-plus"
+                  %>
+                </div>
+              <% end %>
+            </div>
+          <% else %>
+            <div class='edit-container' >
+              <form action="/menuitems/<%= menuitem.id %>/edit" method=get>
+                <td><%= image_submit_tag("edit.png") %></td>
+              </form>
+              <%= form_with(url: "/menuitems/#{menuitem.id}", method: "delete") do %>
+                 <td><%= image_submit_tag("trashcan.png") %></td>
+              <% end %>
+            </div>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</ul>
+</section>

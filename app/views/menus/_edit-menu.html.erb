@@ -1,0 +1,28 @@
+<section>
+  <p class="AddMenuItemLabel">Add an item:</p>
+</section>
+<section>
+  <div>
+    <%= form_with(url: "/menuitems", method: "post", class: "Add-menuitem") do %>
+      <%= hidden_field_tag(name='id',value = menu.id)%>
+      <%= text_field_tag(name = 'name', value = nil,
+                         class: "AddMenuitem-name",
+                         placeholder: "Name")
+      %>
+      <%= text_field_tag(name = 'description', value = nil,
+                         class: "AddMenuitem-description",
+                         placeholder: "Description")
+      %>
+      <%= text_field_tag(name = 'price', value = nil,
+                         class: "AddMenuitem-price",
+                         placeholder: "Price")
+      %>
+      <%= text_field_tag(name = 'diet_type', value = nil,
+                         class: "AddMenuitem-diet_type",
+                         placeholder: "Veg/Non-Veg")
+      %>
+      <%= button_tag(value='Add', class: "Add-Button")  %>
+    <% end %>
+  </div>
+  <%= render partial:'menuitems/menuitems-section',locals: {rendered_from: 'menus',menu: menu} %>
+</section>

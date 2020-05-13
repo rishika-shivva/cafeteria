@@ -3,9 +3,11 @@ class Menuitem < ActiveRecord::Base
   validates :price, presence: true
   validates :diet_type, presence: true
   belongs_to :menu
+  has_many :orderitems
 
-  def self.of_menu(menu)
-    all.where(menu_id: menu.id)
+  def description_method
+    return " #{self.name}" if self.description == "" || self.description == nil
+    self.description
   end
 
   def self.vegetarian

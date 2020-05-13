@@ -8,13 +8,10 @@ class SessionsController < ApplicationController
     user = User.find_by(name: params[:name])
     if user && user.authenticate(params[:password])
       session[:current_user_id] = user.id
-      if user.role == "owner"
-        redirect_to "/menu"
-      else
-        redirect_to "/menus"
-      end
+      flash[:success] = "Logged in successfully!"
+      redirect_to "/"
     else
-      flash[:error] = "Your login attempt was invalid.Please retry."
+      flash[:error] = "Invalid credentials, please try again!"
       redirect_to new_sessions_path
     end
   end

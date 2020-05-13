@@ -10,29 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_22_171924) do
+ActiveRecord::Schema.define(version: 2020_05_08_124217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "menuitems", force: :cascade do |t|
     t.string "name"
-    t.text "description"
-    t.integer "price"
+    t.string "description"
+    t.float "price"
     t.string "diet_type"
-    t.bigint "menu_id"
+    t.bigint "menu_id", null: false
+    t.index ["menu_id"], name: "index_menuitems_on_menu_id"
   end
 
   create_table "menus", force: :cascade do |t|
     t.string "name"
   end
 
+  create_table "orderitems", force: :cascade do |t|
+    t.string "menu_item_name"
+    t.float "menu_item_price"
+    t.bigint "order_id", null: false
+    t.bigint "menuitem_id"
+    t.index ["order_id"], name: "index_orderitems_on_order_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.date "date"
+    t.datetime "delivered_at"
+    t.boolean "ordered"
+    t.string "status"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "role"
     t.string "password_digest"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "menuitems", "menus"
+  add_foreign_key "orderitems", "orders"
+  add_foreign_key "orders", "users"
 end

@@ -1,64 +1,103 @@
-.Home-Title {
-  font-family: sans-serif;
-  width: 400px;
-  margin-top: 60px;
-  padding-left: 400px;
-  font-size: 20px;
-  margin-bottom: 30px;
-}
-
-.Home-Subtitle {
-  font-family: sans-serif;
-  width: 400px;
-  margin-top: 60px;
-  padding-left: 400px;
-  margin-left: 400px;
-  font-size: 20px;
-  margin-bottom: 30px;
-  color: crimson;
-}
-
-.Home-Menulist {
-  font-family: sans-serif;
-  width: 400px;
-  padding-top: 10px;
-  padding-left: 400px;
-  font-size: 20px;
-  margin-bottom: 30px;
+.Home-title {
+  font-size: 32px;
+  margin-bottom: 48px;
+  color: rgb(18, 35, 41);
 }
 
 .Home-authenticate {
-  font-size: 16px;
-  margin-bottom: 20px;
-  padding-left: 400px;
-  width: 500px;
+  font-size: 24px;
+  text-align: center;
 }
 
-.MenuHeader {
-  margin-left: 400px;
-  width: 500px;
-  margin-top: 30px;
-  background-color: lightgray;
+.Home-authenticate2 {
+  font-size: 24px;
+  margin-left: 250px;
+}
+
+.UserHeader {
   font-size: 20px;
-  margin-bottom: 10px;
+  float: right;
+  margin: 20px 60px;
+}
+
+.UserLabel {
+  color: white;
+  margin-bottom: 5px;
+}
+
+.cart-and-logout {
   display: flex;
-  justify-content: space-between;
+  font-weight: 600;
+  margin-top: 300px;
+}
+
+.Icon-name {
+  display: flex;
+  align-items: center;
+}
+
+.Cafeteria-title {
+  font-size: 50px;
+  color: antiquewhite;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.PageSwap {
+  padding: 10px;
+  font-size: 20px;
+  margin: 20px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background-image: url("bkg_user.jpg");
+  background-size: 1325px 675px;
 }
 
 .Flash-error {
-  padding-left: 500px;
-  width: 500px;
-  margin-top: 30px;
-  font-size: 20px;
-  color: darkred;
-  margin-bottom: 20px;
+  font-size: 16px;
+  color: white;
+  border: 1px solid red;
+  background-color: rgb(196, 6, 6);
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  max-width: 300px;
+  margin: 10px auto;
 }
 
-.Flash-notice {
-  margin-top: 30px;
-  padding-left: 500px;
-  width: 500px;
+.Flash-success {
+  font-size: 16px;
+  color: white;
+  background-color: rgb(14, 110, 5);
+  border-radius: 5px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin: 10px auto;
+  max-width: 300px;
+}
+
+.Header-tab {
+  text-decoration: none;
+  color: white;
   font-size: 20px;
-  color: darkblue;
-  margin-bottom: 30px;
+  margin-right: 32px;
+}
+
+.Header-tab:hover {
+  color: lightgrey;
+}
+
+.Signup-link, .Signin-link {
+  text-decoration: underline;
+  color: aliceblue;
+}
+
+.temp {
+  color: blue;
+  margin-right: 5px;
 }

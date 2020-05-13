@@ -4,28 +4,51 @@
     <title>Cafeteria</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-
     <% if @current_user %>
-      <p class="UserHeader">
-        Welcome <%= @current_user.name %>!
-        <%= link_to "Sign Out", destroy_session_path, method: "delete" %>
-      </p>
+          <div class="PageSwap">
+            <div class="Icon-name">
+              <% if @current_user.role == "owner" %>
+                <%= image_tag "menu.png"%>
+                <%= link_to "Menus", menus_path, class: "Header-tab" %>
+              <% end %>
+            </div>
+            <div class="Icon-name">
+              <%= image_tag "order.png"%>
+              <% orders_title = @current_user.role == "customer" ? "My-Orders" : "Orders" %>
+              <%= link_to orders_title, orders_path, class: "Header-tab" %>
+            </div>
+            <div class="Icon-name">
+              <% if @current_user.role == "owner" %>
+                <%= image_tag "user.png"%>
+                <%= link_to "Users", users_path, class: "Header-tab" %>
+              <% end %>
+            </div>
+            <div class="Icon-name">
+              <%= image_tag "cart.png", class: 'temp' %>
+              <%= link_to "Cart", cart_path, method: "get", class: "Header-tab" %>
+            </div>
+            <div class="Icon-name">
+              <%= image_tag "user_me.png"%>
+              <%= link_to "Sign-out", destroy_session_path, method: "delete", class: "Header-tab"%>
+            </div>
+          </div>
     <% end %>
-
     <% if flash[:error] %>
-      <p class="Flash-error"> <%= flash[:error] %> </p>
+     <div>
+      <p class="Flash-error"><%= flash[:error] %></p>
+     </div>
     <% end %>
-
-    <% if flash[:notice] %>
-      <p class="Flash-notice"> <%= flash[:notice] %> </p>
+    <% if flash[:success] %>
+      <div class="Flash-success">
+        <p class="Flash-success-text"><%= flash[:success] %></p>
+      </div>
     <% end %>
-
     <%= yield %>
   </body>
 </html>

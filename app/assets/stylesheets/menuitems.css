@@ -1,133 +1,192 @@
-body {
-  font-family: sans-serif;
-  max-width: 460px;
-  margin: 0 auto;
-  margin-top: 60px;
-}
-
-.MenuitemPage-title {
-  font-size: 20px;
-  margin-left: 500px;
-  width: 400px;
-  color: #453c52;
-  letter-spacing: 0.14px;
-  line-height: 1.6;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
-
-.AddMenuitem {
-  padding-left: 150px;
-  display: flex;
-  height: 32px;
-  align-items: stretch;
-  margin-bottom: 24px;
-}
-
-.MenuitemSection {
-  padding-left: 500px;
-  width: 500px;
+.MenuItemList {
   margin-bottom: 20px;
-}
-
-.AddMenuitem-text {
-  padding: 6px 12px;
-  font-size: 14px;
-  color: #453c52;
-  margin-right: 10px;
-  border-radius: 4px;
-  border: 1px solid #bfb8cc;
-  <<<<<<< HEAD=======
-}
-
-.AddMenuitem-date {
-  padding: 6px;
-  font-size: 14px;
-  color: #453c52;
-  margin-right: 10px;
-  border-radius: 4px;
-  border: 1px solid #bfb8cc;
-  >>>>>>>1216e1303a6d7e8fca59e6fc48967aabe5449c9f
-}
-
-.AddMenuitem-button {
-  padding: 6px 24px;
-  font-size: 14px;
-  color: white;
-  background-color: #48bb78;
-  border-radius: 4px;
-  border: 1px solid transparent;
-}
-
-.MenuitemSectionTitle {
-  display: flex;
-  color: #453c52;
-  align-items: center;
-  margin-bottom: 8px;
-}
-
-.MenuitemSectionTitle-text {
-  font-size: 14px;
-  font-weight: 600;
-  margin-right: 8px;
-  line-height: 1.4;
-}
-
-.MenuitemItem {
-  font-size: 14px;
-  margin-left: 8px;
-  margin-bottom: 6px;
-  color: #453c52;
-}
-
-.MenuitemItem-text {
-  font-size: 16px;
-  display: flex;
-  align-items: stretch;
-}
-
-.MenuitemItem-container {
-  display: flex;
-  padding: 2px 8px;
-  align-items: center;
-}
-
-.MenuitemItem-container:hover {
-  background-color: #f1edf7;
-  <<<<<<< HEAD=======
-}
-
-.MenuitemItem-checkbox {
-  width: 16px;
-  height: 16px;
-}
-
-.MenuitemItem-dueDate {
-  font-size: 10px;
-  color: rgb(141, 133, 154);
-  margin-left: 10px;
-  >>>>>>>1216e1303a6d7e8fca59e6fc48967aabe5449c9f
-}
-
-.MenuitemItem-delete {
-  visibility: hidden;
-  margin-left: 8px;
-}
-
-.MenuitemItem-container:hover .MenuitemItem-delete {
-  visibility: visible;
-}
-
-.MenuitemItem-delete>img {
-  width: 16px;
-}
-
-<<<<<<< HEAD=======.MenuitemItem-date {
-  font-size: 12px;
-  color: #726a7e;
-  letter-spacing: 0.09px;
-  margin-left: 10px;
   display: inline;
 }
 
->>>>>>>1216e1303a6d7e8fca59e6fc48967aabe5449c9f
+.MenuTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.MenuTablehead {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: wheat;
+  color: brown;
+}
+
+.MenuTablebody {
+  border: 1px solid #ddd;
+  padding: 8px;
+  background-color: #f2f2f2;
+}
+
+.PageHead {
+  font-size: 30px;
+  color: red;
+  margin-bottom: 30px;
+}
+
+.Editingtitle {
+  font-size: 28px;
+  font-weight: 100;
+  color: whitesmoke;
+  margin-bottom: 16px;
+}
+
+.MenuItemsBody {
+  font-family: sans-serif;
+  max-width: 85%;
+  margin: 60px auto;
+}
+
+.MenuItemName {
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+.MenuItemDescription {
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.MenuItemPrice {
+  font-size: 13px;
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+
+.MenuItem {
+  margin-bottom: 20px;
+  border-radius: 3px;
+  border: 1px transparent #BFB8CC;
+  width: 250px;
+  height: 250px;
+  max-width: 250px;
+  max-height: 250px;
+  padding: 5px;
+}
+
+.MenuItemDetails {
+  display: list-item;
+}
+
+.PriceAndQuantityContainer {
+  font-size: medium;
+  display: flex;
+  justify-content: space-around;
+}
+
+.MenuItemImage {
+  align-content: center;
+  margin-left: 25px;
+  border-radius: 10px;
+}
+
+.Submit-Items {
+  float: right;
+  border: 0px;
+  border-radius: 5px;
+  color: black;
+  font-size: 20px;
+  background-color: white;
+  padding: 5px 15px;
+  margin-right: 50px;
+}
+
+.Count {
+  color: black;
+  padding: 1px;
+}
+
+.Add-text {
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-right: 20px;
+  border: 1px solid white;
+  text-decoration: none;
+  color: white;
+  font-size: large;
+}
+
+.MenuItem-qty {
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  border: 1px solid white;
+}
+
+.home-minus {
+  text-decoration: none;
+  color: white;
+  margin-right: 2px;
+}
+
+.home-plus {
+  text-decoration: none;
+  color: white;
+  margin-left: 2px;
+}
+
+.edit-container {
+  display: flex;
+  align-items: center;
+}
+
+.edit-menuitem-container {
+  margin: 0 auto;
+  padding: 50px;
+}
+
+.Add-menuitem {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 20px;
+}
+
+.EditMenuitem-name {
+  border: 1px solid #BFB8CC;
+  border-radius: 4px;
+  font-size: 20;
+  color: #453C52;
+  margin-right: 10px;
+  padding: 6px 12px;
+  width: 140px;
+  margin-bottom: 20px;
+}
+
+.EditMenuitem-price {
+  border: 1px solid #BFB8CC;
+  border-radius: 4px;
+  font-size: 20;
+  color: #453C52;
+  margin-right: 10px;
+  width: 60px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.EditMenuitem-diet_type {
+  border: 1px solid #BFB8CC;
+  border-radius: 4px;
+  font-size: 20;
+  color: #453C52;
+  margin-right: 10px;
+  padding: 6px 12px;
+  width: 140px;
+  margin-bottom: 20px;
+}
+
+.EditMenuitem-description {
+  border: 1px solid #BFB8CC;
+  border-radius: 4px;
+  font-size: 20;
+  color: #453C52;
+  margin-right: 10px;
+  padding: 6px 12px;
+  width: 150px;
+  margin-bottom: 20px;
+}
