@@ -13,10 +13,8 @@
     <% if @current_user %>
           <div class="PageSwap">
             <div class="Icon-name">
-              <% if @current_user.role == "owner" %>
                 <%= image_tag "menu.png"%>
                 <%= link_to "Menus", menus_path, class: "Header-tab" %>
-              <% end %>
             </div>
             <div class="Icon-name">
               <%= image_tag "order.png"%>

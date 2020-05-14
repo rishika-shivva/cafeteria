@@ -106,9 +106,8 @@
   padding-left: 2px;
   padding-right: 2px;
   margin-right: 20px;
-  border: 1px solid white;
   text-decoration: none;
-  color: white;
+  color: brown;
   font-size: large;
 }
 
@@ -121,13 +120,13 @@
 
 .home-minus {
   text-decoration: none;
-  color: white;
+  color: brown;
   margin-right: 2px;
 }
 
 .home-plus {
   text-decoration: none;
-  color: white;
+  color: brown;
   margin-left: 2px;
 }
 

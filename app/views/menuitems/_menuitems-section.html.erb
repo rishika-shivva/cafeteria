@@ -21,25 +21,25 @@
             <div>
               <% qty = @current_user.orders.cart_order.orderitems.qty(menuitem.id)%>
               <% if qty==0 %>
-                <%= link_to "Add", orderitems_path(menuitem_id: menuitem.id,
+                <td><%= link_to "Add", orderitems_path(menuitem_id: menuitem.id,
                                                 menu_item_name: menuitem.name,
                                                 menu_item_price: menuitem.price,
                                                 from: "menuitems"),
                                                 method: "post",
                                                 class: "Add-text"
-                 %>
+                 %></td>
               <% else %>
                 <div class='MenuItem-qty'>
                   <% order_item = @current_user.orders.cart_order.orderitems.item(menuitem.id)%>
-                  <%= link_to "− ", orderitem_path(id:order_item.id,from: "menuitems",), method: "delete", class: "home-minus" %>
-                  <%= " #{qty}" %>
-                  <%= link_to "＋", orderitems_path(menuitem_id: menuitem.id,
+                  <td><%= link_to "− ", orderitem_path(id:order_item.id,from: "menuitems",), method: "delete", class: "home-minus" %></td>
+                  <td><%= " #{qty}" %></td>
+                  <td><%= link_to "＋", orderitems_path(menuitem_id: menuitem.id,
                                                     menu_item_name: menuitem.name,
                                                     menu_item_price: menuitem.price,
                                                     from: "menuitems"),
                                                     method: "post",
                                                     class: "home-plus"
-                  %>
+                  %></td>
                 </div>
               <% end %>
             </div>
