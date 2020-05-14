@@ -1,12 +1,12 @@
-<section class="CartBody">
-    <table>
-        <tr class="ColumnTitle">
-            <th class="SerialNo">SNo</th>
-            <th class="ItemName">Name</th>
-            <th class="ItemQuantity">Quantity</th>
-            <th class="EachItemPrice">Price</th>
-            <th class="ItemPrice">TotalPrice</th>
-        </tr>
+<body class="UsersBody">
+    <table class="MenuTable">
+        <thead class="MenuTableHead">
+            <th>SNo</th>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>TotalPrice</th>
+        </thead>
         <% order = @current_user.orders.cart_order %>
         <% orderitems = order.orderitems.getqty %>
         <% serial_no = 1 %>
@@ -43,4 +43,4 @@
             <%= submit_tag "Confirm&Pay", class: 'SubmitButton' %>
         <% end %>
     </div>
-</section>
+</body>
