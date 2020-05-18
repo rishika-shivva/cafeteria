@@ -3,7 +3,7 @@ class HomeController < ApplicationController
 
   def index
     if current_user
-      redirect_to menuitems_path
+      redirect_to menus_path
     else
       redirect_to sessions_path
     end

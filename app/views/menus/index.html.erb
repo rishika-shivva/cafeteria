@@ -1,3 +1,4 @@
+<% if @current_user.role == "owner" %>
 <body class="UsersBody">
   <section class="Menu">
     <div>
@@ -32,3 +33,4 @@
   </section>
   <%= render partial: 'edit-menu',locals:{menu: @menu}%>
 </body>
+<% else %>
