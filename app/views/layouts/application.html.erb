@@ -14,7 +14,27 @@
           <div class="PageSwap">
             <div class="Icon-name">
                 <%= image_tag "menu.png"%>
+<<<<<<< HEAD
                 <%= link_to "Menus", menus_path , class: "Header-tab"%>
+=======
+                <% if @current_user.role == "owner"%>
+                <%= link_to "Menus", menus_path , class: "Header-tab"%>
+                <% else %>
+                <%= form_with(url: "/menus/show", method: "get", class: "Add-menu") do %>
+                <select name="menu_id"
+                        class="Menu-select"
+                        onchange ='if(this.value != 0) { this.form.submit(); }'
+                        autofocus>
+                <option selected disabled>Menus</option>
+                  <%Menu.all.each do |menu|%>
+                    <option value=<%= menu.id %>, class="Menuselect-option">
+                      <%= menu.name %>
+                    </option>
+                  <% end %>
+                </select>
+                <% end %>
+                <% end %>
+>>>>>>> 3b626287b5cd657d3ebf599220ae16439c8ee8e6
             </div>
             <div class="Icon-name">
               <%= image_tag "order.png"%>
