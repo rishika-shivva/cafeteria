@@ -35,7 +35,7 @@
     <hr class='line'>
     <p class="TotalPrice">TotalPrice : ₹<%= order.get_total_price %> </p>
     <div class="Buttons-container">
-        <form action="/menuitems" method="GET">
+        <form action="/menus" method="GET">
             <input class='SubmitButton' type="submit" value='Add-other-items'>
         </form>
         <%= form_with(url: "/orders/pay", method: "patch") do %>

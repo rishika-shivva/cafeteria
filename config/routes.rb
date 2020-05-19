@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post "/orders/addmore", to: "orders#addmore"
   get "/orders/cart", to: "orders#cart", as: :cart
   get "/menus/edit", to: "menus#edit", as: :menus_edit
+  get "/menus/show", to: "menus#show", as: :menus_show
   resources :menus
   resources :users
   resources :menuitems

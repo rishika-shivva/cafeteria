@@ -1,5 +1,11 @@
 <section class="MenuItemList">
+<body class="UsersBody">
 <ul>
+<section>
+    <div class="ActiveMenu">
+      <p class="ActiveMenu-name">Menu- <%= @menu.name %> </p>
+    </div>
+</section>
   <table class="MenuTable">
     <thead class="MenuTablehead">
       <tr>
@@ -17,7 +23,6 @@
           <td><%= menuitem.description %></td>
           <td>₹ <%= menuitem.price %></td>
           <td> <%= menuitem.diet_type%></td>
-          <% if rendered_from == 'home' %>
             <div>
               <% qty = @current_user.orders.cart_order.orderitems.qty(menuitem.id)%>
               <% if qty==0 %>
@@ -43,19 +48,10 @@
                 </div>
               <% end %>
             </div>
-          <% else %>
-            <div class='edit-container' >
-              <form action="/menuitems/<%= menuitem.id %>/edit" method=get>
-                <td><%= image_submit_tag("edit.png") %></td>
-              </form>
-              <%= form_with(url: "/menuitems/#{menuitem.id}", method: "delete") do %>
-                 <td><%= image_submit_tag("trashcan.png") %></td>
-              <% end %>
-            </div>
-          <% end %>
         </tr>
       <% end %>
     </tbody>
   </table>
 </ul>
+</body>
 </section>

@@ -12,6 +12,11 @@ class MenusController < ApplicationController
     end
   end
 
+  def show
+    @menu = Menu.find(params[:menu_id])
+    render :show, locals: { menu: @menu }
+  end
+
   def edit
     menu = Menu.find(params[:menu_id])
     render :edit, locals: { menu: menu }

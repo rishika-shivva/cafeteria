@@ -6,7 +6,7 @@ class OrderitemsController < ApplicationController
     if params[:from] == "cart"
       redirect_to cart_path(id: order.id)
     else
-      redirect_to menuitems_path
+      redirect_to menus_path
     end
   end
 
@@ -19,7 +19,7 @@ class OrderitemsController < ApplicationController
       redirect_to cart_path(id: order.id)
     else
       flash[:success] = "#{params[:menu_item_name]} added to cart successfully!"
-      redirect_to menuitems_path
+      redirect_to cart_path(id: order.id)
     end
   end
 end

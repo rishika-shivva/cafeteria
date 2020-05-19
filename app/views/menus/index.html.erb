@@ -34,3 +34,20 @@
   <%= render partial: 'edit-menu',locals:{menu: @menu}%>
 </body>
 <% else %>
+<body class="UsersBody">
+<p class="ActiveMenu-name"> Select the Menu to be displayed: </p>
+  <%= form_with(url: "/menus/show", method: "get", class: "Add-menu") do %>
+                <select name="menu_id"
+                        class="Menu-select"
+                        onchange ='if(this.value != 0) { this.form.submit(); }'
+                        autofocus>
+                <option selected disabled>Menus</option>
+                  <%Menu.all.each do |menu|%>
+                    <option value=<%= menu.id %>, class="Menuselect-option">
+                      <%= menu.name %>
+                    </option>
+                  <% end %>
+                </select>
+                <% end %>
+</body>
+<% end %>
