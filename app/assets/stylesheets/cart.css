@@ -4,6 +4,29 @@
     margin-bottom: 30px;
 }
 
+.CartTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.CartTablehead {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: wheat;
+    color: brown;
+}
+
+.CartTablebody {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color: white;
+    text-align: center;
+    font-size: 16px;
+}
+
 .OrdersBody {
     font-family: sans-serif;
     max-width: 60%;
@@ -64,33 +87,32 @@ tr {
 .SubmitButton {
     border: 1px solid transparent;
     border-radius: 6px;
-    color: black;
-    font-size: 20px;
-    background-color: whitesmoke;
+    color: brown;
+    background-color: wheat;
+    font-size: 16px;
     padding: 5px 15px;
     margin-left: 30px;
 }
 
 .TotalPrice {
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
     margin-bottom: 20px;
+    color: bisque;
 }
 
 .minus {
     font-weight: 500;
     text-decoration: none;
-    border: 1px solid;
+    color: black;
     padding-left: 4px;
     padding-right: 4px;
-    color: black;
     border-radius: 10px;
 }
 
 .plus {
     font-weight: 500;
     text-decoration: none;
-    border: 1px solid;
     color: black;
     border-radius: 10px;
     padding-left: 1px;
@@ -98,5 +120,5 @@ tr {
 }
 
 .plus:hover, .minus:hover {
-    color: red;
+    color: brown;
 }

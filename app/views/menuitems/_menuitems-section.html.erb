@@ -45,12 +45,16 @@
             </div>
           <% else %>
             <div class='edit-container' >
+              <td>
               <form action="/menuitems/<%= menuitem.id %>/edit" method=get>
-                <td><%= image_submit_tag("edit.png") %></td>
+              <%= image_submit_tag("edit.png") %>
               </form>
+              </td>
+              <td>
               <%= form_with(url: "/menuitems/#{menuitem.id}", method: "delete") do %>
-                 <td><%= image_submit_tag("trashcan.png") %></td>
+                <%= image_submit_tag("trashcan.png") %>
               <% end %>
+              </td>
             </div>
           <% end %>
         </tr>

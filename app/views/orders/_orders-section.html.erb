@@ -1,51 +1,62 @@
 <ul>
-  <% all_orders.each do |order| %>
-    <% delivered_status = (order.delivered_at == nil) ? "notdelivered" : "delivered" %>
-    <li class='Order'>
-      <div class='Order-Container'>
-        <div class='Order-maincontent'>
-          <% if hidden_status == false %>
-            <%= form_with(url: "/orders/#{order.id}", method: "put") do %>
+  <table class= "OrderTable">
+    <thead class="OrderTablehead">
+      <% if hidden_status == false %>
+        <th>  </th>
+      <% end %>
+      <th> Order No. </th>
+      <th> Order Items </th>
+      <% if hidden_status == false %>
+        <th> Name </th>
+        <th> Clerk/Customer </th>
+      <% end %>
+      <th> Date Ordered </th>
+      <th> Delivery Status </th>
+      <% if hidden_status %>
+        <th> </th>
+      <% end %>
+    </thead>
+    <% all_orders.each do |order| %>
+      <tbody class ="OrderTablebody">
+        <% delivered_status = (order.delivered_at == nil) ? "notdelivered" : "delivered" %>
+        <% if hidden_status == false %>
+          <%= form_with(url: "/orders/#{order.id}", method: "put") do %>
+            <td>
               <%= check_box_tag(name = "delivered", value = 1,
                                 checked = !(order.delivered_at == nil),
                                 options = {onclick: "this.form.submit()"})
               %>
-            <% end %>
+            </td>
           <% end %>
-          <p class='Order-Id'>Order-Id : <%= order.id %></p>
-        </div>
-        <div class='Order-maincontent-details'>
-            <p class='Order-customer'><%= order.user.name %></p>
-            <p class="Order-customer"><%= order.user.role %></p>
-            <p class="Ordered-at"><%= order.date.to_s(:short) %></p>
-            <p class="delivered-status-<%= delivered_status %>">
-              <%= delivered_status %>
-            </p>
-            <% if hidden_status %>
-             <%= form_with(url: "/orders/#{order.id}", method: "delete") do %>
-              <%= image_submit_tag(source="delete-icon.svg",
-                                   class: "MenuItem-deleteIcon",
-                                   alt: "deleteicon")
-              %>
-             <% end %>
-            <% end %>
-        </div>
-        <div class="Order-items">
+        <% end %>
+        <td>  <%= order.id %> </td>
+        <td>
           <ul>
             <% orderitems = order.orderitems.getqty %>
-            <% orderitems.each do |name,quantity| %>
-              <li class='Order-orderitem'>
-                <div>
-                  <%= name %>
-                </div>
-                <div class="Orderitem-qty">
-                  <%= quantity %>
-                </div>
-              </li>
-            <% end %>
+            <table>
+              <% orderitems.each do |name,quantity| %>
+                </tbody>
+                  <td><%= name %></td>
+                  <td><%= quantity %></td>
+                </tbody>
+              <% end %>
+            </table>
           </ul>
-        </div>
-      </div>
-    </li>
-  <% end %>
+        </td>
+        <% if hidden_status == false %>
+          <td>  <%= order.user.name %>  </td>
+          <td>  <%= order.user.role %>  </td>
+        <% end %>
+        <td>  <%= order.date.to_s(:long) %> </td>
+        <td>  <%= delivered_status %> </td>
+        <td>
+          <% if hidden_status %>
+            <%= form_with(url: "/orders/#{order.id}", method: "delete") do %>
+              <%= image_submit_tag("trashcan.png") %>
+            <% end %>
+          <% end %>
+        </td>
+      </tbody>
+    <% end %>
+  </table>
 </ul>

@@ -1,5 +1,28 @@
+.OrderTable {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.OrderTablehead {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: wheat;
+  color: brown;
+}
+
+.OrderTablebody {
+  border: 1px solid #ddd;
+  padding: 8px;
+  background-color: white;
+  text-align: center;
+  font-size: 16px;
+}
+
 .Orders-Title {
-  font-size: larger;
+  font-size: 24px;
   font-weight: 800;
   margin-top: 80px;
   color: bisque;
@@ -40,11 +63,8 @@
   margin-bottom: 10px;
 }
 
-.Order-maincontent-details {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-  margin-left: 30px;
+.Orderitems-details {
+  display: list-item;
 }
 
 .Order-id {
@@ -73,14 +93,4 @@
   color: rgb(32, 10, 235);
   font-weight: 400;
   margin-left: 10px;
-}
-
-.delivered-status-delivered {
-  color: green;
-  margin-right: 10px;
-}
-
-.delivered-status-notdelivered {
-  color: red;
-  margin-right: 10px;
 }
