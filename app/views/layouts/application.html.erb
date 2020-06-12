@@ -34,6 +34,12 @@
               <% end %>
             </div>
             <div class="Icon-name">
+              <% if @current_user.role == "owner" %>
+                <%= image_tag "reports.png"%>
+                <%= link_to "Sales Reports", reports_path, method: "get", class: "Header-tab"%>
+              <% end %>
+            </div>
+            <div class="Icon-name">
               <%= image_tag "user_me.png"%>
               <%= link_to "Sign-out", destroy_session_path, method: "delete", class: "Header-tab"%>
             </div>
