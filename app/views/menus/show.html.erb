@@ -1,57 +1,61 @@
 <section class="MenuItemList">
-<body class="UsersBody">
-<ul>
-<section>
-    <div class="ActiveMenu">
-      <p class="ActiveMenu-name">Menu- <%= @menu.name %> </p>
-    </div>
-</section>
-  <table class="MenuTable">
-    <thead class="MenuTablehead">
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Price</th>
-        <th>Veg/Non-Veg</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-    <tbody class="MenuTablebody">
-      <% @menu.menuitems.all.each do |menuitem| %>
-        <tr>
-          <td><%= menuitem.name %></td>
-          <td><%= menuitem.description %></td>
-          <td>₹ <%= menuitem.price %></td>
-          <td> <%= menuitem.diet_type%></td>
+  <body class="UsersBody">
+    <ul>
+      <section>
+        <div class="ActiveMenu">
+          <p class="ActiveMenu-name">Menu- <%= @menu.name %> </p>
+        </div>
+      </section>
+      <table class="MenuTable">
+        <thead class="MenuTablehead">
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Veg/Non-Veg</th>
+            <th>Price</th>
+            <th>Image </th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody class="MenuTablebody">
+          <% @menu.menuitems.all.each do |menuitem| %>
+          <tr>
+            <td><%= menuitem.name %></td>
+            <td><%= menuitem.description %></td>
+            <td> <%= menuitem.diet_type%></td>
+            <td>₹ <%= menuitem.price %></td>
+            <td> <%= link_to image_tag("image.png"), menuitem.imageurl ,target: :_blank %></td>
             <div>
               <% qty = @current_user.orders.cart_order.orderitems.qty(menuitem.id)%>
-              <% if qty==0 %>
-                <td><%= link_to "Add", orderitems_path(menuitem_id: menuitem.id,
-                                                menu_item_name: menuitem.name,
-                                                menu_item_price: menuitem.price,
-                                                from: "menuitems"),
-                                                method: "post",
-                                                class: "Add-text"
-                 %></td>
-              <% else %>
-                <div class='MenuItem-qty'>
-                  <% order_item = @current_user.orders.cart_order.orderitems.item(menuitem.id)%>
-                  <td><%= link_to "− ", orderitem_path(id:order_item.id,from: "menuitems",), method: "delete", class: "home-minus" %></td>
-                  <td><%= " #{qty}" %></td>
-                  <td><%= link_to "＋", orderitems_path(menuitem_id: menuitem.id,
-                                                    menu_item_name: menuitem.name,
-                                                    menu_item_price: menuitem.price,
-                                                    from: "menuitems"),
-                                                    method: "post",
-                                                    class: "home-plus"
-                  %></td>
-                </div>
-              <% end %>
-            </div>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</ul>
-</body>
+                <% if qty==0 %>
+                  <td><%= link_to "Add", orderitems_path(menuitem_id: menuitem.id,
+                                                        menu_item_name: menuitem.name,
+                                                        menu_item_price: menuitem.price,
+                                                          from: "menuitems"),
+                                                        method: "post",
+                                                        class: "Add-text"
+                      %>
+                  </td>
+                <% else %>
+                  <div class='MenuItem-qty'>
+                    <% order_item = @current_user.orders.cart_order.orderitems.item(menuitem.id)%>
+                      <td><%= link_to "− ", orderitem_path(id:order_item.id,from: "menuitems",), method: "delete", class: "home-minus" %></td>
+                      <td><%= " #{qty}" %></td>
+                      <td><%= link_to "＋", orderitems_path(menuitem_id: menuitem.id,
+                                                          menu_item_name: menuitem.name,
+                                                          menu_item_price: menuitem.price,
+                                                          from: "menuitems"),
+                                                          method: "post",
+                                                          class: "home-plus"
+                        %>
+                      </td>
+                  </div>
+                <% end %>
+              </div>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </ul>
+  </body>
 </section>

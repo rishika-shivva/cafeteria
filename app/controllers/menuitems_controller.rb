@@ -8,7 +8,8 @@ class MenuitemsController < ApplicationController
     new_menuitem = menu.menuitems.new(name: params[:name],
                                       description: params[:description],
                                       price: params[:price],
-                                      diet_type: params[:diet_type])
+                                      diet_type: params[:diet_type],
+                                      imageurl: params[:imageurl])
     if new_menuitem.save
       flash[:success] = "#{params[:name]} added to #{menu.name} menu!"
       if @menu == menu
@@ -52,6 +53,7 @@ class MenuitemsController < ApplicationController
     menuitem.description = params[:description].presence || menuitem.description
     menuitem.price = params[:price].presence || menuitem.price
     menuitem.diet_type = params[:diet_type].presence || menuitem.diet_type
+    menuitem.imageurl = params[:imageurl].presence || menuitem.imageurl
     menuitem.save
     if @menu == menuitem.menu
       redirect_to menus_path

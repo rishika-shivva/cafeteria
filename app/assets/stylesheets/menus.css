@@ -114,6 +114,15 @@
   width: 120px;
   padding: 5px;
 }
+.AddMenuitem-imageurl {
+  border: 1px solid #BFB8CC;
+  border-radius: 4px;
+  font-size: 14;
+  color: #453C52;
+  margin-right: 10px;
+  width: 320px;
+  padding: 5px;
+}
 .Menu-select-logout {
   color: black;
   font-weight: 600;

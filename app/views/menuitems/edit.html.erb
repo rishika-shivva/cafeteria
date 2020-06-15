@@ -19,6 +19,11 @@
                          class: "EditMenuitem-diet_type",
                          placeholder:  menuitem.diet_type.presence||'Veg/Non-veg' )
       %>
+      <%= text_field_tag(name = 'imageurl',
+                         value = nil,
+                         class: "EditMenuitem-imageurl",
+                         placeholder:  menuitem.imageurl||'Add Image URL' )
+      %>
       <%= button_tag(value='Update', class: "Add-Button")  %>
     <% end %>
   </div>

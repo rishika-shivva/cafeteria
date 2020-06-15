@@ -1,31 +1,30 @@
 <body class="Mainpage">
-<section class="NewSessionBody">
-  <h1 class="Welcome-title">
-    Welcome to RP Cafeteria
-  </h1>
-  <h1 class="Form-Title">Sign in!</h1>
-
-  <section>
-    <%= form_with(url: sessions_path, method: "post") do %>
-    <div>
-      <%= text_field_tag 'name', nil,
-                          autofocus: true,
-                          placeholder: "Name",
-                          class: "Form-Input"
-      %>
-    </div>
-    <div>
-      <%= password_field_tag 'password', nil,
-                            placeholder: "Password",
+  <section class="NewSessionBody">
+    <h1 class="Welcome-title">
+      Welcome to RP Cafeteria
+    </h1>
+    <h1 class="Form-Title">Sign in!</h1>
+    <section>
+      <%= form_with(url: sessions_path, method: "post") do %>
+        <div>
+          <%= text_field_tag 'name', nil,
+                            autofocus: true,
+                            placeholder: "Name",
                             class: "Form-Input"
-      %>
-    </div>
-    <%= submit_tag 'Sign in', class:"Form-Submit" %>
-    <% end %>
+          %>
+        </div>
+        <div>
+          <%= password_field_tag 'password', nil,
+                              placeholder: "Password",
+                              class: "Form-Input"
+          %>
+        </div>
+        <%= submit_tag 'Sign in', class:"Form-Submit" %>
+      <% end %>
+    </section>
+    <h2 class="Home-authenticate">
+      <p class="UserLabel"> New User?</p>
+      <%= link_to "Sign-up here", new_user_path,class: "Signup-link" %>
+    </h2>
   </section>
-  <h2 class="Home-authenticate">
-    <p class="UserLabel"> New User?</p>
-    <%= link_to "Sign-up here", new_user_path,class: "Signup-link" %>
-  </h2>
-</section>
 </body>

@@ -11,39 +11,39 @@
 
   <body>
     <% if @current_user %>
-          <div class="PageSwap">
-            <div class="Icon-name">
-                <%= image_tag "menu.png"%>
-                <%= link_to "Menus", menus_path , class: "Header-tab"%>
-            </div>
-            <div class="Icon-name">
-              <%= image_tag "order.png"%>
-              <% orders_title = @current_user.role == "customer" ? "My-Orders" : "Orders" %>
-              <%= link_to orders_title, orders_path, class: "Header-tab" %>
-            </div>
-            <div class="Icon-name">
-              <% if @current_user.role == "owner" %>
-                <%= image_tag "user.png"%>
-                <%= link_to "Users", users_path, class: "Header-tab" %>
-              <% end %>
-            </div>
-            <div class="Icon-name">
-              <% if @current_user.role == "customer" %>
-                <%= image_tag "cart.png", class: 'temp' %>
-                <%= link_to "Cart", cart_path, method: "get", class: "Header-tab" %>
-              <% end %>
-            </div>
-            <div class="Icon-name">
-              <% if @current_user.role == "owner" %>
-                <%= image_tag "reports.png"%>
-                <%= link_to "Sales Reports", reports_path, method: "get", class: "Header-tab"%>
-              <% end %>
-            </div>
-            <div class="Icon-name">
-              <%= image_tag "user_me.png"%>
-              <%= link_to "Sign-out", destroy_session_path, method: "delete", class: "Header-tab"%>
-            </div>
-          </div>
+      <div class="PageSwap">
+        <div class="Icon-name">
+          <%= image_tag "menu.png"%>
+          <%= link_to "Menus", menus_path , class: "Header-tab"%>
+        </div>
+        <div class="Icon-name">
+          <%= image_tag "order.png"%>
+          <% orders_title = @current_user.role == "customer" ? "My-Orders" : "Orders" %>
+          <%= link_to orders_title, orders_path, class: "Header-tab" %>
+        </div>
+        <div class="Icon-name">
+          <% if @current_user.role == "owner" %>
+            <%= image_tag "user.png"%>
+            <%= link_to "Users", users_path, class: "Header-tab" %>
+          <% end %>
+        </div>
+        <div class="Icon-name">
+          <% if @current_user.role == "customer" %>
+            <%= image_tag "cart.png", class: 'temp' %>
+            <%= link_to "Cart", cart_path, method: "get", class: "Header-tab" %>
+          <% end %>
+        </div>
+        <div class="Icon-name">
+          <% if @current_user.role == "owner" %>
+            <%= image_tag "reports.png"%>
+            <%= link_to "Sales Reports", reports_path, method: "get", class: "Header-tab"%>
+          <% end %>
+        </div>
+        <div class="Icon-name">
+          <%= image_tag "user_me.png"%>
+          <%= link_to "Sign-out", destroy_session_path, method: "delete", class: "Header-tab"%>
+        </div>
+      </div>
     <% end %>
     <% if flash[:error] %>
      <div>

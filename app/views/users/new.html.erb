@@ -1,40 +1,40 @@
 <body class="Mainpage">
-<section class="NewUserBody">
-<h1 class="Welcome-title">
-  Welcome to RP Cafeteria
-</h1>
-<h1 class="Form-Title">Sign up as a new user!</h1>
-<section class="UsersNew">
-  <%= form_with(url: "/users", method: "post") do %>
-   <div>
-    <%= text_field_tag 'name', nil,
-                       autofocus: true,
-                       placeholder: "Name",
-                       class: "Form-Input"
-    %>
-    </div>
-    <div>
-    <%= password_field_tag  'password', nil,
-                            placeholder: "Password",
+  <section class="NewUserBody">
+    <h1 class="Welcome-title">
+      Welcome to RP Cafeteria
+    </h1>
+    <h1 class="Form-Title">Sign up as a new user!</h1>
+    <section class="UsersNew">
+      <%= form_with(url: "/users", method: "post") do %>
+        <div>
+          <%= text_field_tag 'name', nil,
+                            autofocus: true,
+                            placeholder: "Name",
                             class: "Form-Input"
-    %>
-   </div>
-    <div class="Form-Section-Role">
-    <p class="Input-Label">
-      Role:
-    </p>
-    <select class="Input-role" name="role">
-      <option value="customer" selected>Customer</option>
-      <option value="owner" > Owner </option>
-      <option value="clerk"> Clerk </option>
-    </select>
-   </div>
-   <%= submit_tag ' Sign up ', class: "Form-Submit" %>
-  <% end %>
-</section>
-<h2 class="Home-authenticate2">
-  <p class="UserLabel">Already have an account?</p>
-  <%= link_to "Sign-in here", new_sessions_path, class: "Signin-link" %>
-</h2>
-</section>
+          %>
+        </div>
+        <div>
+          <%= password_field_tag  'password', nil,
+                                  placeholder: "Password",
+                                  class: "Form-Input"
+          %>
+        </div>
+        <div class="Form-Section-Role">
+          <p class="Input-Label">
+            Role:
+          </p>
+          <select class="Input-role" name="role">
+            <option value="customer" selected>Customer</option>
+            <option value="owner" > Owner </option>
+            <option value="clerk"> Clerk </option>
+          </select>
+        </div>
+        <%= submit_tag ' Sign up ', class: "Form-Submit" %>
+      <% end %>
+    </section>
+    <h2 class="Home-authenticate2">
+      <p class="UserLabel">Already have an account?</p>
+      <%= link_to "Sign-in here", new_sessions_path, class: "Signin-link" %>
+    </h2>
+  </section>
 </body>

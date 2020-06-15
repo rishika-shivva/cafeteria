@@ -1,15 +1,15 @@
 <body class="UsersBody">
-<div>
-  <p class="Users-Role">Clerks</p>
-  <%= render partial:'user-section',
-             locals:{  users: User.clerks }
-  %>
-</div>
-<hr>
-<div class="users">
-  <p class="Users-Role">Customers</p>
-  <%= render partial:'user-section',
-             locals:{ users: User.customers }
-  %>
-</div>
+  <div>
+    <p class="Users-Role">Clerks</p>
+    <%= render partial:'user-section',
+              locals:{  users: User.clerks }
+    %>
+  </div>
+  <hr>
+  <div class="users">
+    <p class="Users-Role">Customers</p>
+    <%= render partial:'user-section',
+              locals:{ users: User.customers }
+    %>
+  </div>
 </body>

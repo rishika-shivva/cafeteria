@@ -5,17 +5,4 @@ class Menuitem < ActiveRecord::Base
   belongs_to :menu
   has_many :orderitems
   has_one_attached :image
-
-  def description_method
-    return " #{self.name}" if self.description == "" || self.description == nil
-    self.description
-  end
-
-  def self.vegetarian
-    all.where("diet_type = ?", "veg")
-  end
-
-  def self.nonvegetarian
-    all.where("diet_type = ?", "nonveg")
-  end
 end
