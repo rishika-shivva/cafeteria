@@ -22,7 +22,11 @@
           <tr>
             <td><%= menuitem.name %></td>
             <td><%= menuitem.description %></td>
-            <td> <%= menuitem.diet_type%></td>
+            <% if menuitem.diet_type == "Veg" %>
+              <td> <%= image_tag("veg.png") %></td>
+            <% else %>
+              <td> <%= image_tag("nonveg.png") %></td>
+            <% end %>
             <td>₹ <%= menuitem.price %></td>
             <td> <%= link_to image_tag("image.png"), menuitem.imageurl ,target: :_blank %></td>
             <div>
