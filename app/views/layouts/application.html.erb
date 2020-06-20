@@ -28,7 +28,7 @@
           <% end %>
         </div>
         <div class="Icon-name">
-          <% if @current_user.role == "customer" %>
+          <% if @current_user.role == "customer" || @current_user.role == "clerk" %>
             <%= image_tag "cart.png", class: 'temp' %>
             <%= link_to "Cart", cart_path, method: "get", class: "Header-tab" %>
           <% end %>
