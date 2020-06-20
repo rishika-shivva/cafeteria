@@ -1,0 +1,29 @@
+<body class="UsersBody">
+  <section class="ClerksNew">
+    <p class="NewClerk"> Create a new account for Clerk </p>
+      <%= form_with(url: "/users", method: "post") do %>
+        <div>
+          <%= text_field_tag 'name', nil,
+                            autofocus: true,
+                            placeholder: "Name",
+                            class: "Form-Input"
+          %>
+        </div>
+        <div>
+          <%= password_field_tag  'password', nil,
+                                  placeholder: "Password",
+                                  class: "Form-Input"
+          %>
+        </div>
+        <div class="Form-Section-Role">
+          <p class="Input-Label">
+            Role:
+          </p>
+          <select class="Input-role" name="role">
+            <option value="clerk"> Clerk </option>
+          </select>
+        </div>
+        <%= submit_tag ' Create', class: "Form-Submit" %>
+      <% end %>
+  </section>
+</body>

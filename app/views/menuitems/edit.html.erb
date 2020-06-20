@@ -2,27 +2,27 @@
   <div class='edit-menuitem-container'>
     <%= form_with(url: "/menuitems/#{menuitem.id}", method: "patch", ) do %>
       <h1 class="Editingtitle"> Editing Menu Item: <%= menuitem.name %> <h1>
-      <%= text_field_tag(name = 'name', value = nil,
+      <%= text_field_tag(name = 'name', value = menuitem.name,
                          class: "EditMenuitem-name",
-                         placeholder: menuitem.name )
+                         placeholder: 'Add Name' )
       %>
-      <%= text_field_tag(name = 'description', value = nil,
+      <%= text_field_tag(name = 'description', value = menuitem.description.presence,
                          class: "EditMenuitem-description",
-                         placeholder:  menuitem.description.presence||'Add description' )
+                         placeholder: 'Add description' )
       %>
-      <%= text_field_tag(name = 'price', value = nil,
+      <%= text_field_tag(name = 'price', value = menuitem.price ,
                          class: "EditMenuitem-price",
-                         placeholder:  menuitem.price )
+                         placeholder: 'Add Price' )
       %>
       <%= text_field_tag(name = 'diet_type',
-                         value = nil,
+                         value = menuitem.diet_type.presence,
                          class: "EditMenuitem-diet_type",
-                         placeholder:  menuitem.diet_type.presence||'Veg/Non-veg' )
+                         placeholder: 'Veg/Non-veg' )
       %>
       <%= text_field_tag(name = 'imageurl',
-                         value = nil,
+                         value = menuitem.imageurl,
                          class: "EditMenuitem-imageurl",
-                         placeholder:  menuitem.imageurl||'Add Image URL' )
+                         placeholder: 'Add Image URL' )
       %>
       <%= button_tag(value='Update', class: "Add-Button")  %>
     <% end %>
