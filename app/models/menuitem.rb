@@ -4,5 +4,4 @@ class Menuitem < ActiveRecord::Base
   validates :diet_type, presence: true
   belongs_to :menu
   has_many :orderitems
-  has_one_attached :image
 end

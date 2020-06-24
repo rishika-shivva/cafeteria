@@ -28,9 +28,7 @@ class MenuitemsController < ApplicationController
   end
 
   def destroy
-    ensure_owner_logged_in
-    menuitem_id = params[:id]
-    menuitem = Menuitem.find(menuitem_id)
+    menuitem = Menuitem.find(params[:id])
     menu = menuitem.menu
     name = menuitem.name
     menuitem.destroy
