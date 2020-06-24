@@ -35,7 +35,7 @@
   </body>
   <% else %>
     <body class="UsersBody">
-      <p class="ActiveMenu-name"> Select the Menu to be displayed: </p>
+      <p class="ActiveMenu-Name"> Select the Menu to be displayed: </p>
         <%= form_with(url: "/menus/show", method: "get", class: "Add-menu") do %>
           <select name="menu_id"
                   class="Menu-select"

@@ -62,7 +62,11 @@
   padding: 6px;
   color: antiquewhite;
 }
-
+.ActiveMenu-Name {
+  padding: 6px;
+  color: antiquewhite;
+  font-size: 24px;
+}
 .AddMenuItemLabel {
   margin-bottom: 12px;
   font-size: 20px;
