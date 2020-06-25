@@ -32,7 +32,7 @@ class MenuitemsController < ApplicationController
     menu = menuitem.menu
     name = menuitem.name
     menuitem.destroy
-    flash[:success] = "Menuitem- #{name} deleted from menu #{@menu.name} successfully!"
+    flash[:success] = "Menuitem- #{name} deleted successfully!"
     if @menu == menu
       redirect_to menus_path
     else

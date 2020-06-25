@@ -18,7 +18,7 @@
     </thead>
     <% all_orders.each do |order| %>
       <tbody class ="OrderTablebody">
-        <% delivered_status = (order.delivered_at == nil) ? "Not Delivered" : "Delivered" %>
+        <% delivered_status = (order.delivered_at == nil) ? "Not Delivered" : "Delivered at #{order.delivered_at.strftime("%d/%m/%Y %I:%M %p")}" %>
         <% if hidden_status == false %>
           <%= form_with(url: "/orders/#{order.id}", method: "put") do %>
             <td>
